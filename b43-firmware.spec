@@ -7,11 +7,14 @@ Summary:        Firmwares for broadcom wireless network adapters
 
 Group:          System Environment/Kernel
 License:        Redistributable, no modification permitted
-URL:			http://www.lwfinger.com
-Source:			http://www.lwfinger.com/b43-firmware/broadcom-wl-%{version}.tar.bz2
+URL:		http://www.lwfinger.com
+Source:		http://www.lwfinger.com/b43-firmware/broadcom-wl-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 
+Epoch:		1
+
+Requires:	kernel >= 3.2
 BuildRequires:  b43-fwcutter > 014
 
 %description
@@ -21,28 +24,29 @@ Package contains firmwares for broadcom wireless network adapters.
 %prep
 %setup -q -c -n %{name}-%{version}
 
-
 %build
 mkdir firmware
 b43-fwcutter -w firmware broadcom-wl-%{version}/linux/wl_apsta.o
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/lib/firmware
 cp -R firmware/* $RPM_BUILD_ROOT/lib/firmware
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(-,root,root,-)
 /lib/firmware/b43
 
-
 %changelog
+* Sat Feb  4 2012 Alexei Panov <me AT elemc DOT name> - 1:5.100.138-1
+- Update for kernel >= 3.2 (Fedora 16) version 5.100.138, firmware version (666.2)
+
+* Thu Nov 10 2011 Alexei Panov <me AT elemc DOT name> - 1:5.10.56.27.3-1
+- Regress to worked version for kernel < 3.2
+
 * Sun Oct 30 2011 Alexei Panov <me AT elemc DOT name> - 5.100.138-1
 - Update version to 5.100.138
 
