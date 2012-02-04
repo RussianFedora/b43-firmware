@@ -1,6 +1,6 @@
 Name:           b43-firmware
 Version:        5.10.56.27.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Firmwares for broadcom wireless network adapters
 
 Group:          System Environment/Kernel
@@ -43,6 +43,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Feb  4 2012 Alexei Panov <me AT elemc DOT name> - 5.10.56.27.3-2
+- Added Obsoletes b43-openfwwf
+
 * Sat Feb  4 2012 Alexei Panov <me AT elemc DOT name> - 5.10.56.27.3-1
 - Adopted for el6 (RERemix)
 
