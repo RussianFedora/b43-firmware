@@ -2,7 +2,7 @@
 
 Name:           b43-firmware
 Version:        5.100.138
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Firmwares for broadcom wireless network adapters
 
 Group:          System Environment/Kernel
@@ -41,7 +41,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/firmware/b43
 
 %changelog
-* Sat Feb  4 2012 Alexei Panov <me AT elemc DOT name> - 1:5.100.138-1
+* Sat Feb  4 2012 Alexei Panov <me AT elemc DOT name> - 1:5.100.138-2
 - Update for kernel >= 3.2 (Fedora 16) version 5.100.138, firmware version (666.2)
 
 * Thu Nov 10 2011 Alexei Panov <me AT elemc DOT name> - 1:5.10.56.27.3-1
