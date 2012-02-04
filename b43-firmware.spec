@@ -1,5 +1,3 @@
-# new source http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2
-
 Name:           b43-firmware
 Version:        5.10.56.27.3
 Release:        1%{?dist}
@@ -11,7 +9,6 @@ URL:			http://www.lwfinger.com
 Source:			http://mirror2.openwrt.org/sources/broadcom-wl-%{version}_mipsel.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
-Epoch:			1
 
 BuildRequires:  b43-fwcutter > 014
 
@@ -45,6 +42,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Feb  4 2012 Alexei Panov <me AT elemc DOT name> - 5.10.56.27.3-1
+- Adopted for el6 (RERemix)
+
 * Thu Nov 10 2011 Alexei Panov <me AT elemc DOT name> - 1:5.10.56.27.3-1
 - Regress to worked version for kernel < 3.2
 
