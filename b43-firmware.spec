@@ -11,6 +11,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 
 BuildRequires:  b43-fwcutter > 014
+Obsoletes:      b43-openfwwf
 
 %description
 Package contains firmwares for broadcom wireless network adapters.
