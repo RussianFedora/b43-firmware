@@ -14,7 +14,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 Epoch:          1
 
-BuildRequires:  b43-fwcutter > 018
+BuildRequires:  b43-fwcutter > 017
 
 %description
 Package contains firmwares for broadcom wireless network adapters.
