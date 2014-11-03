@@ -1,19 +1,20 @@
 # new source http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2
 
 Name:           b43-firmware
-Version:        5.10.56.27.3
+Version:        5.100.138 
 Release:        1%{?dist}
 Summary:        Firmwares for broadcom wireless network adapters
 
 Group:          System Environment/Kernel
 License:        Redistributable, no modification permitted
-URL:			http://www.lwfinger.com
-Source:			http://mirror2.openwrt.org/sources/broadcom-wl-%{version}_mipsel.tar.bz2
+URL:            http://www.lwfinger.com
+#Source:        http://mirror2.openwrt.org/sources/broadcom-wl-%{version}_mipsel.tar.bz2
+Source:         http://www.lwfinger.com/b43-firmware/broadcom-wl-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
-Epoch:			1
+Epoch:          1
 
-BuildRequires:  b43-fwcutter > 014
+BuildRequires:  b43-fwcutter > 018
 
 %description
 Package contains firmwares for broadcom wireless network adapters.
@@ -26,7 +27,7 @@ Package contains firmwares for broadcom wireless network adapters.
 %build
 mkdir firmware
 #b43-fwcutter -w firmware broadcom-wl-%{version}/linux/wl_apsta.o
-b43-fwcutter -w firmware broadcom-wl-%{version}/driver/wl_apsta/wl_prebuilt.o
+/usr/bin/b43-fwcutter -w firmware broadcom-wl-%{version}/linux/wl_apsta.o
 
 
 %install
@@ -45,6 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Nov 03 2014 Alexei Panov <me AT elemc DOT name> 1:5.100.138 -1%{?dist}
+- Update for Fedora 20/21
+
 * Thu Nov 10 2011 Alexei Panov <me AT elemc DOT name> - 1:5.10.56.27.3-1
 - Regress to worked version for kernel < 3.2
 
