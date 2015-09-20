@@ -1,8 +1,8 @@
 # new source http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2
 
 Name:           b43-firmware
-Version:        5.100.138 
-Release:        1%{?dist}
+Version:        5.100.138
+Release:        2%{?dist}
 Summary:        Firmwares for broadcom wireless network adapters
 
 Group:          System Environment/Kernel
@@ -46,6 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Aug 27 2015 Vasiliy N. Glazov <vascom2@gmail.com> 1:5.100.138-2.R
+- Bump release
+
 * Mon Nov 03 2014 Alexei Panov <me AT elemc DOT name> 1:5.100.138 -1%{?dist}
 - Update for Fedora 20/21
 
